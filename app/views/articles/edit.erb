@@ -1,0 +1,12 @@
+<h2>Edit Article</h2>
+<h3><%= @article.title %></h3>
+<p><%= @article.content %></p>
+
+<form method="post" action="/articles/<%= @article.id %>">
+    <input name="_method" type="hidden" value="patch" />
+    <label for="">New Title:</label><input name="title" type="text" placeholder="Title..." value="<%= @article.title %>"/><br>
+    <label for="">New Content:</label> <input name="content" type="text" placeholder="Content..."  value="<%= @article.content %>"/><br>
+    <input type="submit" value="Update Article"/>
+</form>
+<br>
+<a href = "/articles"><h3>Return Home</h3></a>
